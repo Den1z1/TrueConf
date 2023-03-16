@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TrueConf</string>
+    <string name="hello_rus">Привет</string>
+    <string name="hello_en">Hello</string>
+</resources>
