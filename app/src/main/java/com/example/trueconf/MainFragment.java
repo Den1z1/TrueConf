@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -46,7 +47,7 @@ public class MainFragment extends Fragment {
         textHello.setText(isRusLoc ? R.string.hello_rus : R.string.hello_en);
         textHello.setOnClickListener(view1 -> animTextCancel(textHello));
 
-        LinearLayout touchLayout = rootView.findViewById(R.id.touch_layout);
+        ConstraintLayout touchLayout = rootView.findViewById(R.id.touch_layout);
         touchLayout.setOnTouchListener((view1, event) -> {
             if (event.getAction() == MotionEvent.ACTION_DOWN) {
                 animTextCancel(textHello);
@@ -72,7 +73,7 @@ public class MainFragment extends Fragment {
         });
     }
 
-    private void animTextMove(TextView textHello, LinearLayout touchLayout, boolean isDown) {
+    private void animTextMove(TextView textHello, ConstraintLayout touchLayout, boolean isDown) {
         textHello.animate()
                 .y(isDown ? touchLayout.getHeight() - textHello.getHeight() : 0)
                 .setDuration(2000)
